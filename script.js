@@ -1,5 +1,6 @@
 $(document).ready(function(){
 newWallPaper();
+layorColor();
 });
 
 //get a random background when loading the web page
@@ -24,8 +25,15 @@ function randomColor(){
 }
 //make a layer over it that's one color
 function layorColor(){
-
+  var newDiv = $('<div class ="container"></div>').css({
+    'width': '100%',
+    'height': '100%',
+    'position': 'fixed',
+    'background-color': 'grey'
+  })
+  $('body').append(newDiv);
 }
+
 //when the mouse moves over it erase it, it erases the forground color
 function removeColor(){
 
