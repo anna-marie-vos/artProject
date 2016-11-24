@@ -11,10 +11,23 @@ function newWallPaper(){
 }
 //for now just create a random background color.
 function randomColor(){
-  return 'red';
+  var color = [
+    'red',
+    'purple',
+    'orange',
+    'green',
+    'white',
+    'black',
+  ];
+  var randomCounter = Math.floor(Math.random()*color.length);
+  return color[randomCounter];
 }
 //make a layer over it that's one color
+function layorColor(){
 
+}
 //when the mouse moves over it erase it, it erases the forground color
+function removeColor(){
 
+}
 //when 90% of the picture is revealed it reloads the webpage
