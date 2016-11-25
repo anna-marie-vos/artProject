@@ -20,8 +20,7 @@ function randomColor(){
     'white',
     'black',
   ];
-  var randomCounter = Math.floor(Math.random()*color.length);
-  return color[randomCounter];
+  return color[randomNumber(color.length)];
 }
 //create x number of divs to fill the whole page
 function createGrid (){
@@ -36,7 +35,11 @@ function createGrid (){
    $('.box').addClass('grey');
 }
 //when the mouse moves over it erase it, it erases the forground color
-function removeColor(){
+function removeColor(count){
 
+}
+function randomNumber(count){
+    var randomNum = Math.floor(Math.random()*count);
+    return randomNum;
 }
 //when 90% of the picture is revealed it reloads the webpage
