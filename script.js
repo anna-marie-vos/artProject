@@ -1,5 +1,6 @@
 $(document).ready(function(){
 newWallPaper();
+createGrid();
 
 });
 
@@ -13,7 +14,6 @@ function newWallPaper(){
 //for now just create a random background color.
 function randomColor(){
   var color = [
-    'red',
     'purple',
     'orange',
     'green',
@@ -24,12 +24,15 @@ function randomColor(){
   return color[randomCounter];
 }
 //create x number of divs to fill the whole page
-function creatGrid (){
-  number = 6;
-  number *=number;
-  for(var x = 0; x<number; x++){
+function createGrid (){
+  number = 10;
+  power =number*number;
+  dimensionPercentage = (100/number);
+  for(var x = 0; x<power; x++){
     $('.container').append('<div class ="box"></div>');
-  }
+   }
+   $('.box').width(dimensionPercentage +'%');
+   $('.box').height(dimensionPercentage +'%');
 }
 //when the mouse moves over it erase it, it erases the forground color
 function removeColor(){
