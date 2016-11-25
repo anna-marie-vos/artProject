@@ -24,7 +24,7 @@ function randomColor(){
 }
 //create x number of divs to fill the whole page
 function createGrid (){
-  number = 4;
+  number = 2;
   power =number*number;
   dimensionPercentage = (99/number);
   for(var x = 0; x<power; x++){
@@ -37,14 +37,34 @@ function createGrid (){
 //when the mouse moves over it erase it, it erases the forground color
 function removeColor(){
   var divCount = [];
+  var counter = [];
+
 divCount = $('.grey').toArray();
+counter = shuffle(divCount.length);
+console.log(counter);
+var maxLoop = divCount.length;
+var x = 0;
+(function next(){
+  if(x>=maxLoop){
+    return;
+  }else{
 
-console.log(shuffle(divCount.length));
+  setTimeout(function(){
+       var num = "."+counter[x-1].toString();
+       $(num).removeClass('grey');
+       next();
+  },100);
+x++;
+}
+})();
 
 
+// for(var x = 0; x < divCount.length;x++){
+//    var num = "."+counter[x].toString();
+//    $(num).removeClass('grey').fadeout();
+// }
+//
 
-  // var num = "."+randomNumber(divCount.length).toString();
-  // $(num).removeClass('grey');
 
 }
 function randomNumber(count){
