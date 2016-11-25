@@ -1,7 +1,7 @@
 $(document).ready(function(){
 newWallPaper();
 createGrid();
-
+removeColor();
 });
 
 //get a random background when loading the web page
@@ -28,7 +28,7 @@ function createGrid (){
   power =number*number;
   dimensionPercentage = (99/number);
   for(var x = 0; x<power; x++){
-    $('.container').append('<div class ="box"></div>');
+    $('.container').append('<div class ="box '+x+'"></div>');
    }
    $('.box').width(dimensionPercentage +'%');
    $('.box').height(dimensionPercentage +'%');
@@ -36,7 +36,11 @@ function createGrid (){
 }
 //when the mouse moves over it erase it, it erases the forground color
 function removeColor(count){
-
+  var divCount = [];
+divCount = $('.grey').toArray();
+var num = "."+randomNumber(divCount.length).toString();
+$(num).removeClass('grey');
+//$('.11').removeClass('grey');
 }
 function randomNumber(count){
     var randomNum = Math.floor(Math.random()*count);
