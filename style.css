@@ -26,8 +26,30 @@ body{
   margin: 0;
   padding: 0;
   display: inline-block;
+  border-radius: 5px;
 }
 
 .grey{
     background-color: grey;
+}
+.aqua{
+    background-color: #00FFFF;
+}
+.BlueViolet{
+    background-color: #8A2BE2;
+}
+.Cyan {
+    background-color: #00FFFF;
+}
+.DarkOrange{
+    background-color: #FF8C00;
+}
+.DeepSkyBlue {
+    background-color: #00BFFF;
+}
+.DeepPink{
+    background-color: #FF1493;
+}
+.Fuchsia {
+    background-color: #FF00FF;
 }

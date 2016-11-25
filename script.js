@@ -3,7 +3,7 @@ newWallPaper();
 createGrid();
 removeColor();
 });
-var depth = "";
+
 //get a random background when loading the web page
 //find a random background generator API.
  // https://api.desktoppr.co/1/wallpapers/random
@@ -20,8 +20,7 @@ function randomImage(){
     success: function(data){
       URL = data.response.image.preview.url;
       $('body').css("background-image",'url('+ URL+')');
-      depth =data.response.image.preview.height;
-      console.log(depth);
+
     }
   });
 }
@@ -56,11 +55,12 @@ function createGrid (){
   number = 8;
   power =number*number;
   dimensionPercentage = (99/number);
+  var picHeight = 0;
   for(var x = 0; x<power; x++){
     $('.container').append('<div class ="box '+x+'"></div>');
    }
    $('.box').width(dimensionPercentage +'%');
-   $('.box').height(dimensionPercentage*.66 +'%');
+   $('.box').height(dimensionPercentage* 0.75 +'%');
    $('.box').addClass('grey');
 }
 //remove color randomly
