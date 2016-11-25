@@ -24,9 +24,9 @@ function randomColor(){
 }
 //create x number of divs to fill the whole page
 function createGrid (){
-  number = 2;
+  number = 10;
   power =number*number;
-  dimensionPercentage = (99/number);
+  dimensionPercentage = (97/number);
   for(var x = 0; x<power; x++){
     $('.container').append('<div class ="box '+x+'"></div>');
    }
@@ -53,7 +53,7 @@ var x = 0;
        var num = "."+counter[x-1].toString();
        $(num).removeClass('grey');
        next();
-  },100);
+  },200);
 x++;
 }
 })();
