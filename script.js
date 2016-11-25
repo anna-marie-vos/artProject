@@ -25,17 +25,18 @@ function randomColor(){
 }
 //create x number of divs to fill the whole page
 function createGrid (){
-  number = 10;
+  number = 4;
   power =number*number;
-  dimensionPercentage = (100/number);
+  dimensionPercentage = (99/number);
   for(var x = 0; x<power; x++){
     $('.container').append('<div class ="box"></div>');
    }
    $('.box').width(dimensionPercentage +'%');
    $('.box').height(dimensionPercentage +'%');
+   $('.box').addClass('grey');
 }
 //when the mouse moves over it erase it, it erases the forground color
 function removeColor(){
-//create a new div
+
 }
 //when 90% of the picture is revealed it reloads the webpage
