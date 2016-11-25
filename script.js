@@ -1,29 +1,27 @@
 $(document).ready(function(){
 newWallPaper();
-//createGrid();
-//removeColor();
+createGrid();
+removeColor();
 });
-var URL = "";
+var depth = "";
 //get a random background when loading the web page
 //find a random background generator API.
  // https://api.desktoppr.co/1/wallpapers/random
 function newWallPaper(){
   // $('body').css("background-color", randomColor);
 randomImage();
-console.log(URL);
-  $('body').css("background-image",'url('+ URL+')');
-
 }
 function randomImage(){
   $.ajax({
     url:'https://api.desktoppr.co/1/wallpapers/random',
-    dataType: 'json',
-    key: 'rRa-_N2W1W8Xz18T2dKd',
+    dataType: 'jsonp',
+    auth_token: 'rRa-_N2W1W8Xz18T2dKd',
     type: 'GET',
     success: function(data){
-      console.log(data);
       URL = data.response.image.preview.url;
-      //console.log(URL);
+      $('body').css("background-image",'url('+ URL+')');
+      depth =data.response.image.preview.height;
+      console.log(depth);
     }
   });
 }
