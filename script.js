@@ -23,7 +23,14 @@ function randomColor(){
   var randomCounter = Math.floor(Math.random()*color.length);
   return color[randomCounter];
 }
-
+//create x number of divs to fill the whole page
+function creatGrid (){
+  number = 6;
+  number *=number;
+  for(var x = 0; x<number; x++){
+    $('.container').append('<div class ="box"></div>');
+  }
+}
 //when the mouse moves over it erase it, it erases the forground color
 function removeColor(){
 //create a new div
