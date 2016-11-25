@@ -34,11 +34,12 @@ function createGrid (){
    $('.box').height(dimensionPercentage +'%');
    $('.box').addClass('grey');
 }
-//when the mouse moves over it erase it, it erases the forground color
+//remove color randomly
 function removeColor(){
   var divCount = [];
   var counter = [];
 
+//loop through the array using recursive funtion to add timedelay
 divCount = $('.grey').toArray();
 counter = shuffle(divCount.length);
 console.log(counter);
