@@ -41,14 +41,14 @@ function randomImage(){
 // }
 //create x number of divs to fill the whole page
 function createGrid (){
-  number = 10;
+  number = 8;
   power =number*number;
-  dimensionPercentage = (97/number);
+  dimensionPercentage = (99/number);
   for(var x = 0; x<power; x++){
     $('.container').append('<div class ="box '+x+'"></div>');
    }
    $('.box').width(dimensionPercentage +'%');
-   $('.box').height(dimensionPercentage +'%');
+   $('.box').height(dimensionPercentage*.59 +'%');
    $('.box').addClass('grey');
 }
 //remove color randomly
