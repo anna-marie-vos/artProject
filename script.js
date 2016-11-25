@@ -35,15 +35,36 @@ function createGrid (){
    $('.box').addClass('grey');
 }
 //when the mouse moves over it erase it, it erases the forground color
-function removeColor(count){
+function removeColor(){
   var divCount = [];
 divCount = $('.grey').toArray();
-var num = "."+randomNumber(divCount.length).toString();
-$(num).removeClass('grey');
-//$('.11').removeClass('grey');
+
+console.log(shuffle(divCount.length));
+
+
+
+  // var num = "."+randomNumber(divCount.length).toString();
+  // $(num).removeClass('grey');
+
 }
 function randomNumber(count){
     var randomNum = Math.floor(Math.random()*count);
     return randomNum;
+}
+function shuffle(count){
+  var arr = [];
+  for(var x =0;x<count;x++){
+    arr[x]=x;
+  }
+
+  for(var x =0; x<count;x++){
+    var y = randomNumber(count);
+    temp = arr[x];
+    arr[x] = arr[y];
+    arr[y] = temp;
+  }
+  return arr;
+
+
 }
 //when 90% of the picture is revealed it reloads the webpage
