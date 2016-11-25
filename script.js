@@ -48,7 +48,7 @@ function createGrid (){
     $('.container').append('<div class ="box '+x+'"></div>');
    }
    $('.box').width(dimensionPercentage +'%');
-   $('.box').height(dimensionPercentage*.59 +'%');
+   $('.box').height(dimensionPercentage*.60 +'%');
    $('.box').addClass('grey');
 }
 //remove color randomly
