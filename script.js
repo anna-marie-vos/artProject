@@ -39,17 +39,23 @@ function randomImage(){
 //   ];
 //   return arr[randomNumber(arr.length)];
 // }
-//for now just create a random background color.
-// function randomColor(){
-//   var color = [
-//     'purple',
-//     'orange',
-//     'green',
-//     'white',
-//     'black',
-//   ];
-//   return color[randomNumber(color.length)];
-// }
+//add random colors to the front blocks
+function randomColor(){
+  var color = [
+    'grey',
+    'aqua',
+    'BlueViolet',
+    'Cyan',
+    'DarkOrange',
+    'DeepSkyBlue',
+    'DeepPink',
+    'Fuchsia',
+    'Gold',
+    'Green',
+    'LawnGreen',
+  ];
+  return color[randomNumber(color.length)];
+}
 //create x number of divs to fill the whole page
 function createGrid (){
   number = 8;
@@ -69,7 +75,7 @@ function removeColor(){
   var counter = [];
 
 //loop through the array using recursive funtion to add timedelay
-divCount = $('.grey').toArray();
+divCount = $("'."+randomColor()+"'").toArray();
 counter = shuffle(divCount.length);
 // console.log(counter);
 var maxLoop = divCount.length;
