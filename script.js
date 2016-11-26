@@ -58,7 +58,7 @@ function randomColor(){
 }
 //create x number of divs to fill the whole page
 function createGrid (){
-  number = 4;
+  number = 8;
   power =number*number;
   dimensionPercentage = (99/number);
   var picHeight = 0;
@@ -67,7 +67,8 @@ function createGrid (){
    }
    $('.box').width(dimensionPercentage +'%');
    $('.box').height(dimensionPercentage* 0.75 +'%');
-   $('.box').addClass('grey');
+   console.log(randomColor);
+   $('.box').addClass(randomColor);
 }
 //remove color randomly
 function removeColor(){
@@ -75,7 +76,7 @@ function removeColor(){
   var counter = [];
 
 //loop through the array using recursive funtion to add timedelay
-divCount = $('.grey').toArray();
+divCount = $('.box').toArray();
 counter = shuffle(divCount.length);
 // console.log(counter);
 var maxLoop = divCount.length;
@@ -83,27 +84,19 @@ var x = 0;
 (function next(){
   if(x>=maxLoop){
     return;
-  }else{
-
-  setTimeout(function(){
+    }
+    else{
+      setTimeout(function(){
        var num = "."+counter[x-1].toString();
        var classList = $(num)[0].className.split(' ');
        $(num).removeClass(classList[2]);
        next();
-  },200);
-x++;
+      },200);
+    x++;
+    }
+  })();
 }
-})();
 
-
-// for(var x = 0; x < divCount.length;x++){
-//    var num = "."+counter[x].toString();
-//    $(num).removeClass('grey').fadeout();
-// }
-//
-
-
-}
 function randomNumber(count){
     var randomNum = Math.floor(Math.random()*count);
     return randomNum;
