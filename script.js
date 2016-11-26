@@ -3,7 +3,7 @@ newWallPaper();
 createGrid();
 removeColor();
 });
-
+var color=[];
 //get a random background when loading the web page
 //find a random background generator API.
  // https://api.desktoppr.co/1/wallpapers/random
@@ -41,7 +41,7 @@ function randomImage(){
 // }
 //add random colors to the front blocks
 function randomColor(){
-  var color = [
+  color = [
     'grey',
     'aqua',
     'BlueViolet',
@@ -52,13 +52,13 @@ function randomColor(){
     'Fuchsia',
     'Gold',
     'Green',
-    'LawnGreen',
+    'LawnGreen'
   ];
   return color[randomNumber(color.length)];
 }
 //create x number of divs to fill the whole page
 function createGrid (){
-  number = 8;
+  number = 4;
   power =number*number;
   dimensionPercentage = (99/number);
   var picHeight = 0;
@@ -75,7 +75,7 @@ function removeColor(){
   var counter = [];
 
 //loop through the array using recursive funtion to add timedelay
-divCount = $("'."+randomColor()+"'").toArray();
+divCount = $('.grey').toArray();
 counter = shuffle(divCount.length);
 // console.log(counter);
 var maxLoop = divCount.length;
@@ -87,7 +87,8 @@ var x = 0;
 
   setTimeout(function(){
        var num = "."+counter[x-1].toString();
-       $(num).removeClass('grey');
+       var classList = $(num)[0].className.split(' ');
+       $(num).removeClass(classList[2]);
        next();
   },200);
 x++;
