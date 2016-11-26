@@ -30,35 +30,46 @@ body{
 }
 
 .grey{
-    background-color: grey;
+  background-image: linear-gradient(grey, #696969);
+    /*background-color: grey;*/
 }
 .aqua{
-    background-color: #00FFFF;
+    background-image: linear-gradient(#00FFFF, #7FFFD4);
+    /*background-color: #00FFFF;*/
 }
 .BlueViolet{
-    background-color: #8A2BE2;
+    background-image: linear-gradient(#8A2BE2, #9932CC);
+    /*background-color: #8A2BE2;*/
 }
 .Cyan {
-    background-color: #00FFFF;
+    background-image: linear-gradient(#00FFFF, #008B8B);
+    /*background-color: #00FFFF;*/
 }
 .DarkOrange{
-    background-color: #FF8C00;
+    background-image: linear-gradient(#FF8C00, #FF0000);
+    /*background-color: #FF8C00;*/
 }
 .DeepSkyBlue {
-    background-color: #00BFFF;
+    background-image: linear-gradient(#00BFFF, #1E90FF);
+    /*background-color: #00BFFF;*/
 }
 .DeepPink{
-    background-color: #FF1493;
+    background-image: linear-gradient(#FF1493, #FF00FF);
+    /*background-color: #FF1493;*/
 }
 .Fuchsia {
-    background-color: #FF00FF;
+    background-image: linear-gradient(#FF00FF, #BA55D3);
+    /*background-color: #FF00FF;*/
 }
 .Gold{
-    background-color: #FFD700;
+    background-image: linear-gradient(#FFD700, #FFFF00);
+    /*background-color: #FFD700;*/
 }
 .Green{
-    background-color: #008000;
+    background-image: linear-gradient(#008000, #00FF00);
+    /*background-color: #008000;*/
 }
 .LawnGreen{
-    background-color: ##7CFC00;
+    background-image: linear-gradient(#7CFC00, #00FF7F);
+    /*background-color: #7CFC00;*/
 }
