@@ -1,16 +1,16 @@
 $(document).ready(function(){
 newWallPaper();
-createGrid();
-removeColor();
+
 });
 var color=[];
 //get a random background when loading the web page
 //find a random background generator API.
  // https://api.desktoppr.co/1/wallpapers/random
 function newWallPaper(){
-  // $('body').css("background-color", randomColor);
 randomImage();
+
 }
+
 function randomImage(){
   $.ajax({
     url:'https://api.desktoppr.co/1/wallpapers/random',
@@ -19,11 +19,35 @@ function randomImage(){
     type: 'GET',
     success: function(data){
       URL = data.response.image.preview.url;
-      $('body').css("background-image",'url('+ URL+')');
+      var length = data.response.image.preview.width;
+      var height = data.response.image.preview.height;
+      $('.container').css("background-image",'url('+ URL+')');
+      $('body').height(height+'px');
 
+
+      function createGrid (){
+        number = 8;
+        power =number*number;
+        dimPercentage = (99/number);
+        var picHeight = 100/number;
+        console.log(height/length);
+        console.log(picHeight);
+        for(var x = 0; x<power; x++){
+          $('.container').append('<div class ="box '+x+'"></div>');
+        }
+        $('.box').width(dimPercentage +'%');
+        $('.box').height(picHeight+'%');
+        $('.box').addClass(randomColor);
+      }
+    createGrid();
+    removeColor();
     }
   });
+
 }
+//create x number of divs to fill the whole page
+
+
 
 //add random colors to the front blocks
 function randomColor(){
@@ -42,20 +66,7 @@ function randomColor(){
   ];
   return color[randomNumber(color.length)];
 }
-//create x number of divs to fill the whole page
-function createGrid (){
-  number = 8;
-  power =number*number;
-  dimensionPercentage = (99/number);
-  var picHeight = 0;
-  for(var x = 0; x<power; x++){
-    $('.container').append('<div class ="box '+x+'"></div>');
-   }
-   $('.box').width(dimensionPercentage +'%');
-   $('.box').height(dimensionPercentage* 0.75 +'%');
-   console.log(randomColor);
-   $('.box').addClass(randomColor);
-}
+
 //remove color randomly
 function removeColor(){
   var divCount = [];

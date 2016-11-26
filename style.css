@@ -2,31 +2,25 @@
   /*border:1px solid red;*/
   margin: 0;
   padding: 0;
+  /*background-color: grey;*/
+  margin: 0 auto;
 }
 body{
-  border:0;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  background-size: 100%;
-  background-repeat: no-repeat;
+  /*display: flex;*/
+  /*align-items: center;*/
+  border: 1px red;
+  height: 700px;
 }
 
 .container{
-  border:0;
-  margin: 0;
-  padding:0;
   width: 100%;
   height: 100%;
-  position: fixed;
-
+  background-position: center top;
+  background-repeat: no-repeat;
 }
+
 .box{
-  border:50px;
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-  border-radius: 5px;
+  float: left;
 }
 
 .grey{
